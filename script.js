@@ -113,3 +113,23 @@ document.addEventListener("DOMContentLoaded", () => {
       successText.textContent = "Successfully registered!";
     });
 });
+function initMap() {
+  // Define the location for the University of Cape Coast
+  const uccLocation = { lat: 5.104, lng: -1.2251 };
+
+  // Create a new map centered at the University of Cape Coast
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 15, // Adjust the zoom level as needed
+    center: uccLocation,
+  });
+
+  // Add a marker at the University of Cape Coast
+  const marker = new google.maps.Marker({
+    position: uccLocation,
+    map: map,
+    title: "University of Cape Coast", // Optional title for the marker
+  });
+}
+
+// Load the map when the window is loaded
+window.onload = initMap;
